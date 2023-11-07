@@ -39,8 +39,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="botIniciar" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="125" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="botIniciar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="125" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="441" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="labUsuario" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
@@ -51,9 +56,11 @@
                           <Component id="txtusuario" max="32767" attributes="0"/>
                           <Component id="jpasContraseña" pref="202" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="botmostrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="223" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,6 +73,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labUsuario" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="txtusuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botmostrar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -74,7 +82,7 @@
               </Group>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               <Component id="botIniciar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="259" max="32767" attributes="0"/>
+              <EmptySpace pref="248" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,6 +123,8 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Iniciar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="botmostrar">
     </Component>
   </SubComponents>
 </Form>

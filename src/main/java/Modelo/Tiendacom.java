@@ -1,7 +1,7 @@
 
 package Modelo;
 
-import controlador.Conexion;
+
 import controlador.Controladorlogin;
 
 public class Tiendacom {

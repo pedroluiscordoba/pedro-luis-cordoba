@@ -41,10 +41,7 @@ public class Controlador_usuario implements ActionListener {
     }
 }
 
-public class Controlador_usuario implements ActionListener {
 
-    public Controlador_usuario() {
-    }
 
     public void control_usua() {
         prin.addWindowListener(now WindowAdapter()

@@ -23,6 +23,10 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
         princ.setVisible(true);//hace visible la ventana
         getionPestanas();
     }
+    public void gestionpestaña(){
+        if(princ.getBtnNuevo().getSelecte
+                
+    }
 
     public ControladorPrincipal() {
         princ.getBtnNuevo().addActionListener(this);
@@ -97,6 +101,10 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
 
     public ModeloUsuario getModeusu() {
         return modeusu;
+    }
+
+    private void gestionPestana() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

@@ -1,7 +1,17 @@
 
 package Modelo;
 
+import controlador.Conexion;
+import java.awt.Component;
+import java.io.File;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
@@ -42,6 +52,9 @@ public class Modeloproducto {
     }
     public void buscarImagen(){
         JFileChooser archivos = new JFileChooser();
+        String rutacarpeta= getClass().getClassLoader().getResource("producto").getPath();
+        File carpeta= new File(rutacarpeta);
+        archivos.setCurrentDirectory(carpeta);
         FileNameExtensionFilter filtro = new FileNameExtensionFilter(
         "JPG,PNG,& GIF","jpg","png","gif");
         archivos.setFileFilter(filtro);
@@ -51,5 +64,50 @@ public class Modeloproducto {
     }
                 
     }
-    
+    public byte[] convertirimagen(String andar){
+        try {
+            File archivor = new  File (ruta);
+            byte []foto= new byte[(int)archivo.length()];
+         //  InputStream img = new File InpuStream(archivo);
+           // img.read(foto);
+            
+            return foto;
+        } catch (Exception e){
+            return null;
+            
+        }
+        
+    }
+    public void insertarproducto(){
+        Conexion con = new Conexion();
+        Connection cn= con.iniciarConnexion();
+        String insProdocto="call insersion_Producto(?,?,?,?)";
+        try {
+            PreparedStatement ps = cn.prepareStatement(insProdocto);
+            ps.setString(1, getNom());
+            ps.setString(1, getDes());
+            ps.setBytes(1, getImagen());
+            ps.setString(1, getRuta());
+            ps.executeUpdate();
+            
+            
+            
+            JOptionPane.showMessageDialog(null, "registro guardado");
+            
+            
+           
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public void limpiarProducut(Component[] panel) {
+        for (Object control : panel) {
+            if (control instanceof JTextField) {
+                ((JTextField) control).setText("");
+            }
+            if (control instanceof JTextArea) {
+                ((JTextArea) control).setText("");
+            }
+        }
+    }
 }

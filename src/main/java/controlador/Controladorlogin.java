@@ -46,8 +46,7 @@ public class Controladorlogin implements ActionListener{
     }
     
 
-    }
-}   
+ }   
  
     
     
