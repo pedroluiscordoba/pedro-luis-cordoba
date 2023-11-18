@@ -1,22 +1,23 @@
-
 package Modelo;
 
 import controlador.Conexion;
 import java.awt.Component;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
 public class Modeloproducto {
-    private String nom, des,ruta;
+    
+    private String nom, des, ruta;
     private byte imagen[];
 
     public String getNom() {
@@ -50,63 +51,70 @@ public class Modeloproducto {
     public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
-    public void buscarImagen(){
+
+    public void buscarImagen() {
         JFileChooser archivos = new JFileChooser();
-        String rutacarpeta= getClass().getClassLoader().getResource("producto").getPath();
-        File carpeta= new File(rutacarpeta);
+        String rutacarpeta = getClass().getClassLoader().getResource("producto").getPath();
+        File carpeta = new File(rutacarpeta);
         archivos.setCurrentDirectory(carpeta);
         FileNameExtensionFilter filtro = new FileNameExtensionFilter(
-        "JPG,PNG,& GIF","jpg","png","gif");
+                "JPG,PNG,& GIF", "jpg", "png", "gif");
         archivos.setFileFilter(filtro);
-        if(archivos.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
+        if (archivos.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             setRuta(archivos.getSelectedFile().getAbsolutePath());
-       
-    }
-                
-    }
-    public byte[] convertirimagen(String andar){
-        try {
-            File archivor = new  File (ruta);
-            byte []foto= new byte[(int)archivo.length()];
-         //  InputStream img = new File InpuStream(archivo);
-           // img.read(foto);
-            
-            return foto;
-        } catch (Exception e){
-            return null;
-            
+
         }
-        
+
     }
-    public void insertarproducto(){
+
+    public byte[] convertirimagen(String andar) {
+        try {
+            File archivos = new File(andar);
+            byte[] foto = new byte[(int) archivos.length()];
+
+            InputStream img = new FileInputStream(archivos);
+           
+            img.read(foto);
+
+            return foto;
+        } catch (Exception e) {
+            return null;
+
+        }
+
+    }
+
+    public void insertarproducto() {
         Conexion con = new Conexion();
-        Connection cn= con.iniciarConnexion();
-        String insProdocto="call insersion_Producto(?,?,?,?)";
+        Connection cn = con.iniciarConnexion();
+        String insProdocto = "call insersion_Producto(?,?,?,?)";
         try {
             PreparedStatement ps = cn.prepareStatement(insProdocto);
             ps.setString(1, getNom());
-            ps.setString(1, getDes());
-            ps.setBytes(1, getImagen());
-            ps.setString(1, getRuta());
+            ps.setString(2, getDes());
+            ps.setBytes(3, getImagen());
+            ps.setString(4, getRuta());
             ps.executeUpdate();
-            
-            
-            
+
             JOptionPane.showMessageDialog(null, "registro guardado");
-            
-            
-           
-        }catch(SQLException e){
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+//limpiar campos
     public void limpiarProducut(Component[] panel) {
         for (Object control : panel) {
             if (control instanceof JTextField) {
                 ((JTextField) control).setText("");
             }
-            if (control instanceof JTextArea) {
-                ((JTextArea) control).setText("");
+            if (control instanceof JScrollPane) {
+                Component[] limpio = ((JScrollPane) control).getViewport().getComponents();
+                for (Object controltext : limpio) {
+                    if (controltext instanceof JTextArea) {
+                        ((JTextArea) control).setText("");
+                    }
+                }
             }
         }
     }

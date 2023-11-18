@@ -39,28 +39,26 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="botIniciarseccion" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabiniciarsesion" min="-2" pref="125" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="botIniciar" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Component id="labUsuario" min="-2" pref="107" max="-2" attributes="0"/>
+                          <Component id="lblcontraseña" min="-2" pref="85" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="441" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labUsuario" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="lblcontraseña" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtusuario" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jpasContraseña" min="-2" pref="202" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="btnmostrarcontra" min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtusuario" max="32767" attributes="0"/>
-                          <Component id="jpasContraseña" pref="202" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botmostrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,27 +66,27 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="46" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labUsuario" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="txtusuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botmostrar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="jLabiniciarsesion" min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="txtusuario" min="-2" max="-2" attributes="0"/>
+                  <Component id="labUsuario" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblcontraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jpasContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblcontraseña" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnmostrarcontra" pref="32" max="32767" attributes="0"/>
+                  <Component id="jpasContraseña" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              <Component id="botIniciar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="248" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="botIniciarseccion" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="252" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jLabiniciarsesion">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="3"/>
@@ -116,15 +114,18 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="jpasContrase&#xf1;a">
     </Component>
-    <Component class="javax.swing.JButton" name="botIniciar">
+    <Component class="javax.swing.JButton" name="botIniciarseccion">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Iniciar"/>
+        <Property name="text" type="java.lang.String" value=" Iniciar Seccion"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botmostrar">
+    <Component class="javax.swing.JButton" name="btnmostrarcontra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

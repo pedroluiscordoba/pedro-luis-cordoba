@@ -36,27 +36,30 @@ public class Modelo_login {
         this.contra = contra;
         
     }
-    public boolean validar(String usuario,String pass){
+    public boolean validar(String usuario, String pass) {
+        Conexion conect = new Conexion();
+        Connection cn = conect.iniciarConnexion();
+
         boolean result = false;
-        String sql = "Call login(?.?)";
+        String sql = "Call login(?,?)";
         try {
-           PreparedStatement ps = cn.prepareStatement(sql);
-           ps.setString(1,usuario);
-           ps.setString(2,pass);
-           
-           ResultSet rs= ps.executeQuery();
-           
-           while (rs.next()){
-               result= true;
-           }
-           if(result==true);
-           cn.close();
-           conect.cerrarConexion();
-            
-        }catch (SQLException e){
-           e.printStackTrace();
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setString(1, usuario);
+            ps.setString(2, pass);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                result = true;
+            }
+            if (result == true){
+                cn.close();
+                conect.cerrarConexion();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-         return result;
+        return result;
     }
 }
   
