@@ -16,19 +16,18 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 public class ControladorPrincipal implements ActionListener, ChangeListener {
 
-  Principal prin = new Principal();
+    Principal prin = new Principal();
+
     Nuevos_Usuarios usua = new Nuevos_Usuarios();
     Nuevo_Cliente clien = new Nuevo_Cliente();
     Nuevo_proveedor provee = new Nuevo_proveedor();
     Nuevo_Producto produc = new Nuevo_Producto();
 //    Nueva_Factura_Compra factcompr = new Nueva_Factura_Compra();
     Nueva_venta nuevaven = new Nueva_venta();
-    Controladorusuario controusu = new  Controladorusuario();
+    Controladorusuario controusu = new Controladorusuario();
     ControladorCliente controcli = new ControladorCliente();
 //    Controladorproveedor contropro = new Controladorproveedor();
     Cntrolador_producto controproduc = new Cntrolador_producto();
@@ -43,22 +42,29 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
 //        prin.getBtnNuevarfactura().addActionListener(this);
 //        prin.getBtnnuevaventa().addActionListener(this);
 //        prin.getBtnNuevousuario().addActionListener(this);
-        usua.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        clien.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        provee.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         produc.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //        .setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         nuevaven.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        prin.getjButnuevousuario().addActionListener(this);
+        usua.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        prin.getJbutBuscarproveedor().addActionListener(this);
+        provee.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        prin.getjButbuscarcliente().addActionListener(this);
+        clien.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        prin.getJbutBuscarproveedor().addActionListener(this);
+        usua.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+
     }
 
     public void iniciarPrincipal() {
         prin.setLocationRelativeTo(null);//Centra la ventana
         prin.setTitle("Principal");//Le da titulo a la ventana
-        prin.getjTable_pricipal();
         prin.setExtendedState(JFrame.MAXIMIZED_BOTH);//Maximiza la ventana
         prin.setVisible(true);//Se visualiza la ventana
         gestionUsuario();//llamo al metodo de Gestion usuario
         gestionCliente();
+
     }
 
     public void gestionarPestanas() {
@@ -68,27 +74,20 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
     public void gestionUsuario() {
 //        modusu.mostrarTablaUsuario(prin.getjTableUsuario(), "", "Usuario");
 
-        prin.getjTable_pricipal().addChangeListener(new ChangeListener() {
-
-            @Override
-            public void stateChanged(ChangeEvent e) {
-
-            }
-        });
-        prin.getBtnNuevousuario().addMouseListener(new MouseAdapter() {
+        prin.getjButton1().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
 //                prin.getjTable_pricipal().set("");
-                prin.getjTableUsuario().setForeground(new java.awt.Color(0, 0, 0));
+                prin.getJttableusuario().setForeground(new java.awt.Color(0, 0, 0));
             }
         });
         //Para darle clic al boton de editar
-        prin.getjTableUsuario().addMouseListener(new MouseAdapter() {
+        prin.getJttableusuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int fila = prin.getjTableUsuario().rowAtPoint(e.getPoint());
-                int colum = prin.getjTableUsuario().columnAtPoint(e.getPoint());
-                modusu.setDocum(Integer.parseInt(prin.getjTableUsuario().getValueAt(fila, 0).toString()));
+                int fila = prin.getJttableusuario().rowAtPoint(e.getPoint());
+                int colum = prin.getJttableusuario().columnAtPoint(e.getPoint());
+                modusu.setDocum(Integer.parseInt(prin.getJttableusuario().getValueAt(fila, 0).toString()));
 
                 if (colum == 9) {
                     prin.setVisible(false);
@@ -105,7 +104,7 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
     }
 
     public void gestionCliente() {
-        modcli.mostrarTablaCliente(prin.getjTableCliente(), "", "Cliente");
+        modcli.mostrarTablaCliente(prin.getTablecliente(), "", "Cliente");
     }
 
     public void gestionProveedor() {
@@ -127,40 +126,55 @@ public class ControladorPrincipal implements ActionListener, ChangeListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource().equals(prin.getBtnNuevousuario())) {
+        if (e.getSource().equals(prin.getjButton1())) {
             prin.setVisible(false);
             controusu.controladorusuario();
         }
-        if (e.getSource().equals(prin.getBtnnuevocliente())) {
+        if (e.getSource().equals(prin.getjButbuscarcliente())) {
             prin.setVisible(false);
             controcli.controlCliente();
         }
-        if (e.getSource().equals(prin.getBtnproveedor())) {
+        if (e.getSource().equals(prin.getJbutBuscarproveedor())) {
             prin.setVisible(false);
 //            contropro.controlProveedor();
         }
-        if (e.getSource().equals(prin.getBtnNuevoproducto())) {
+        if (e.getSource().equals(prin.getjButbuscarproducto())) {
             prin.setVisible(false);
 //            controproduc.Cntrolador_product();
-
         }
-        if (e.getSource().equals(prin.getBtnNuevarfactura())) {
+        if (e.getSource().equals(prin.getjButnuevousuario())) {
+            Controladorusuario con = new Controladorusuario();
+            con.controladorusuario();
+        }
+        
+        if (e.getSource().equals(prin.getJbutBuscarproveedor())) {
+            Controladorproveedor con = new Controladorproveedor();
+            con.controlProveedor();
+        }
+        if (e.getSource().equals(prin.getjButbuscarcliente())) {
+            ControladorCliente con = new ControladorCliente();
+            con.controlCliente();
+        }
+
+        if (e.getSource().equals(prin.getjButbuscarfactura())) {
             prin.setVisible(false);
 //            factcompr.setLocationRelativeTo(null);
 //            factcompr.setTitle("Nueva Factura Compra");
 //            factcompr.setVisible(true);
         }
-        if (e.getSource().equals(prin.getBtnnuevaventa())) {
+        if (e.getSource().equals(prin.getjButbuscarventa())) {
             prin.setVisible(false);
             nuevaven.setLocationRelativeTo(null);
             nuevaven.setTitle("Nueva Venta");
             nuevaven.setVisible(true);
         }
-    }
+    
 
-    @Override
-    public void stateChanged(ChangeEvent e) {
-        int seleccionar = prin.getjTable_pricipal().getSelectedIndex();
+}
+
+@Override
+public void stateChanged(ChangeEvent e) {
+        int seleccionar = prin.getjTabbedPane1().getSelectedIndex();
         if (seleccionar == 0) {
             gestionUsuario();
         }

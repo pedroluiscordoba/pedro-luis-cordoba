@@ -52,9 +52,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtncancelar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                          <Component id="Guardar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnGuardar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -68,7 +68,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="txtimagen" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnuevo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnbuscarimagen" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -99,20 +99,20 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Imagen" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtimagen" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnbuscarimagen" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                           <Component id="Descripcion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="98" max="32767" attributes="0"/>
-                          <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtncancelar" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="Guardar" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnGuardar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -157,7 +157,7 @@
             <Property name="text" type="java.lang.String" value="Descripcion"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Cancelar">
+        <Component class="javax.swing.JButton" name="jbtncancelar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
@@ -168,7 +168,7 @@
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Guardar">
+        <Component class="javax.swing.JButton" name="jbtnGuardar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
@@ -179,7 +179,7 @@
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnuevo">
+        <Component class="javax.swing.JButton" name="btnbuscarimagen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar imagen"/>
           </Properties>

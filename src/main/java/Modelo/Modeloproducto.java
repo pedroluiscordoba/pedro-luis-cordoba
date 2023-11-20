@@ -35,6 +35,7 @@ public class Modeloproducto {
     public void setDes(String des) {
         this.des = des;
     }
+    
 
     public String getRuta() {
         return ruta;

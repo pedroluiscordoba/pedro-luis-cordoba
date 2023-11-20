@@ -22,28 +22,38 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     }
 
     public JButton getCancelar() {
-        return Cancelar;
+        return jbtncancelar;
     }
 
     public void setCancelar(JButton Cancelar) {
-        this.Cancelar = Cancelar;
+        this.jbtncancelar = Cancelar;
+    }
+
+    public JButton getJbtnGuardarproducto() {
+        return jbtnGuardar;
+    }
+
+    public void setJbtnGuardarproducto(JButton jbtnGuardarproducto) {
+        this.jbtnGuardar = jbtnGuardarproducto;
     }
 
     public JButton getGuardar() {
-        return Guardar;
+        return jbtnGuardar;
     }
 
     public void setGuardar(JButton Guardar) {
-        this.Guardar = Guardar;
+        this.jbtnGuardar = Guardar;
     }
 
-    public JButton getBtnuevo() {
-        return btnuevo;
+    public JButton getButbuscarimagen() {
+        return btnbuscarimagen;
     }
 
-    public void setBtnuevo(JButton btnuevo) {
-        this.btnuevo = btnuevo;
+    public void setButbuscarimagen(JButton butbuscarimagen) {
+        this.btnbuscarimagen = butbuscarimagen;
     }
+
+   
 
     public JTextArea getTxtdescr() {
         return txtdescriprocdu;
@@ -68,6 +78,14 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     public void setTxtnombre(JTextField txtnombre) {
         this.txtnombre = txtnombre;
     }
+
+    public JButton getBtnbuscarimagen() {
+        return btnbuscarimagen;
+    }
+
+    public void setBtnbuscarimagen(JButton btnbuscarimagen) {
+        this.btnbuscarimagen = btnbuscarimagen;
+    }
     
 
     /**
@@ -87,9 +105,9 @@ public class Nuevo_Producto extends javax.swing.JFrame {
         Imagen = new javax.swing.JLabel();
         txtimagen = new javax.swing.JTextField();
         Descripcion = new javax.swing.JLabel();
-        Cancelar = new javax.swing.JButton();
-        Guardar = new javax.swing.JButton();
-        btnuevo = new javax.swing.JButton();
+        jbtncancelar = new javax.swing.JButton();
+        jbtnGuardar = new javax.swing.JButton();
+        btnbuscarimagen = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtdescriprocdu = new javax.swing.JTextArea();
 
@@ -107,15 +125,15 @@ public class Nuevo_Producto extends javax.swing.JFrame {
         Descripcion.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Descripcion.setText("Descripcion");
 
-        Cancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        Cancelar.setForeground(new java.awt.Color(0, 0, 153));
-        Cancelar.setText("Cancelar");
+        jbtncancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jbtncancelar.setForeground(new java.awt.Color(0, 0, 153));
+        jbtncancelar.setText("Cancelar");
 
-        Guardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        Guardar.setForeground(new java.awt.Color(0, 0, 204));
-        Guardar.setText("Guardar");
+        jbtnGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jbtnGuardar.setForeground(new java.awt.Color(0, 0, 204));
+        jbtnGuardar.setText("Guardar");
 
-        btnuevo.setText("Buscar imagen");
+        btnbuscarimagen.setText("Buscar imagen");
 
         txtdescriprocdu.setColumns(20);
         txtdescriprocdu.setRows(5);
@@ -128,9 +146,9 @@ public class Nuevo_Producto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Cancelar)
+                        .addComponent(jbtncancelar)
                         .addGap(201, 201, 201)
-                        .addComponent(Guardar)
+                        .addComponent(jbtnGuardar)
                         .addGap(11, 11, 11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -142,7 +160,7 @@ public class Nuevo_Producto extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnuevo))
+                                .addComponent(btnbuscarimagen))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelnuevoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,18 +182,18 @@ public class Nuevo_Producto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Imagen)
                     .addComponent(txtimagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnuevo))
+                    .addComponent(btnbuscarimagen))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(Descripcion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                        .addComponent(Cancelar))
+                        .addComponent(jbtncancelar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Guardar)))
+                        .addComponent(jbtnGuardar)))
                 .addGap(49, 49, 49))
         );
 
@@ -204,15 +222,15 @@ public class Nuevo_Producto extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cancelar;
     private javax.swing.JLabel Descripcion;
-    private javax.swing.JButton Guardar;
     private javax.swing.JLabel Imagen;
     private javax.swing.JLabel Nombre;
-    private javax.swing.JButton btnuevo;
+    private javax.swing.JButton btnbuscarimagen;
     private javax.swing.JLabel jLabelnuevoproducto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbtnGuardar;
+    private javax.swing.JButton jbtncancelar;
     private Modelo.Tiendacom tiendacom1;
     private javax.swing.JTextArea txtdescriprocdu;
     private javax.swing.JTextField txtimagen;

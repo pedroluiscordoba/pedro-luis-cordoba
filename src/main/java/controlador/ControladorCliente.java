@@ -83,7 +83,7 @@ public class ControladorCliente implements ActionListener {
 //                    modcliente.actualizarUsuario();
 //                    usu.setVisible(false);
 //                    prin.setVisible(true);
-                    modclie.mostrarTablaCliente(princ.getjTableCliente(), "", "Cliente");
+                    modclie.mostrarTablaCliente(princ.getTablecliente(), "", "Cliente");
 //                    prin.getTpPrincipal().setSelectedIndex(0);
                 }
             }

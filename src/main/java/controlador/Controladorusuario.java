@@ -107,7 +107,7 @@ public class Controladorusuario implements ActionListener {
                     modusuario.actualizarUsuario();
                     usua.setVisible(false);
                     princ.setVisible(true);
-                  modusuario.mostrarTablaUsuario(princ.getjTableUsuario(), "", "Usuario");
+//                  modusuario.mostrarTablaUsuario(princ.getjTableUsuario(), "", "Usuario");
 //                    prin.getTpPrincipal().setSelectedIndex(0);
                 }
 

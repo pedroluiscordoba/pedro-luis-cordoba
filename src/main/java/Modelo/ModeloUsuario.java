@@ -169,7 +169,7 @@ public class ModeloUsuario {
         for (Object control : panel) {
             if (control instanceof JTextField jTextField) {
                 jTextField.setText("");
-
+            
                 if (control instanceof JComboBox jComboBox) {
                     jComboBox.setSelectedItem("seleccione...");
                 }
