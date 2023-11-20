@@ -350,6 +350,8 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 51));
 
+        jButnuevousuario.setBackground(new java.awt.Color(204, 204, 204));
+        jButnuevousuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButnuevousuario.setText("Nuevo Usuario");
 
         jttablanuevousuario.setModel(new javax.swing.table.DefaultTableModel(
@@ -376,8 +378,8 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButnuevousuario)
                         .addGap(212, 212, 212)
-                        .addComponent(jTextbuscarusuario)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                        .addComponent(jTextbuscarusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,13 +390,15 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jTextbuscarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jtableprincipal.addTab("Usuario", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 51));
 
+        jbutBuscarproveedor.setBackground(new java.awt.Color(0, 153, 153));
+        jbutBuscarproveedor.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jbutBuscarproveedor.setText("Buscar Proveedor");
 
         jTableproveedor.setModel(new javax.swing.table.DefaultTableModel(
@@ -421,7 +425,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextvuscarproveedor))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 270, Short.MAX_VALUE))
+                .addGap(0, 454, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,6 +443,8 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 51, 0));
 
+        jButbuscarcliente.setBackground(new java.awt.Color(153, 255, 153));
+        jButbuscarcliente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButbuscarcliente.setText("Buscar Cliente");
 
         jTexbuscarusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -472,7 +478,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(331, 331, 331)
                         .addComponent(jTexbuscarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(384, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,6 +496,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 153));
 
+        jButbuscarproducto.setBackground(new java.awt.Color(51, 51, 51));
+        jButbuscarproducto.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButbuscarproducto.setForeground(new java.awt.Color(255, 102, 204));
         jButbuscarproducto.setText("Buscar Producto");
         jButbuscarproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -545,6 +554,8 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(102, 102, 0));
 
+        jButbuscarventa.setBackground(new java.awt.Color(51, 255, 51));
+        jButbuscarventa.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButbuscarventa.setText("Buscar Venta");
 
         jTextbuscarventa.addActionListener(new java.awt.event.ActionListener() {
@@ -576,9 +587,9 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jButbuscarventa)
                         .addGap(96, 96, 96)
-                        .addComponent(jTextbuscarventa))
+                        .addComponent(jTextbuscarventa, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(188, 264, Short.MAX_VALUE))
+                .addGap(188, 356, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,6 +607,8 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(51, 0, 51));
 
+        jButbuscarfactura.setBackground(new java.awt.Color(0, 204, 102));
+        jButbuscarfactura.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButbuscarfactura.setText("Buscar Factutra");
 
         jTablefactura.setModel(new javax.swing.table.DefaultTableModel(
@@ -616,14 +629,14 @@ public class Principal extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jButbuscarfactura, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                .addComponent(jButbuscarfactura, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
                 .addGap(121, 121, 121)
-                .addComponent(jTextbuscarfactura, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                .addComponent(jTextbuscarfactura, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
