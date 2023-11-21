@@ -6,6 +6,7 @@ package Vista;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -21,13 +22,66 @@ public class Nuevafactura extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTextField getjTexnumerodecomprovante() {
+        return jTexnumerodecomprovante;
+    }
+
+    public void setjTexnumerodecomprovante(JTextField jTexnumerodecomprovante) {
+        this.jTexnumerodecomprovante = jTexnumerodecomprovante;
+    }
+    
+
+    public JButton getButguardarnuefactu() {
+        return butguardarnuefactu;
+    }
+
+    public void setButguardarnuefactu(JButton butguardarnuefactu) {
+        this.butguardarnuefactu = butguardarnuefactu;
+    }
+
+    public JButton getjButcancelarnuefactu() {
+        return jButcancelarnuefactu;
+    }
+
+    public void setjButcancelarnuefactu(JButton jButcancelarnuefactu) {
+        this.jButcancelarnuefactu = jButcancelarnuefactu;
+    }
+
+    public JButton getjButidentificacionproveedor() {
+        return jButidentificacionproveedor;
+    }
+
+    public void setjButidentificacionproveedor(JButton jButidentificacionproveedor) {
+        this.jButidentificacionproveedor = jButidentificacionproveedor;
+    }
+
+    public JButton getjButidentificacionusuario() {
+        return jButidentificacionusuario;
+    }
+
+    public void setjButidentificacionusuario(JButton jButidentificacionusuario) {
+        this.jButidentificacionusuario = jButidentificacionusuario;
+    }
+
+    
+    
+
     public JButton getjButoGuardar() {
-        return jButoGuardar;
+        return butguardarnuefactu;
     }
 
     public void setjButoGuardar(JButton jButoGuardar) {
-        this.jButoGuardar = jButoGuardar;
+        this.butguardarnuefactu = jButoGuardar;
     }
+
+    public JButton getjButcancelar() {
+        return jButcancelarnuefactu;
+    }
+
+    public void setjButcancelar(JButton jButcancelar) {
+        this.jButcancelarnuefactu = jButcancelar;
+    }
+    
 
     public JComboBox<String> getjCombtipodepago() {
         return jCombtipodepago;
@@ -35,14 +89,6 @@ public class Nuevafactura extends javax.swing.JFrame {
 
     public void setjCombtipodepago(JComboBox<String> jCombtipodepago) {
         this.jCombtipodepago = jCombtipodepago;
-    }
-
-    public JTextField getjTexdescuento() {
-        return jTexdescuento;
-    }
-
-    public void setjTexdescuento(JTextField jTexdescuento) {
-        this.jTexdescuento = jTexdescuento;
     }
 
     public JTextField getjTexidenproveedor() {
@@ -61,6 +107,15 @@ public class Nuevafactura extends javax.swing.JFrame {
         this.jTexidenusuario = jTexidenusuario;
     }
 
+    public JPanel getjPanenuevafactura() {
+        return jPanenuevafactura;
+    }
+
+    public void setjPanenuevafactura(JPanel jPanenuevafactura) {
+        this.jPanenuevafactura = jPanenuevafactura;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,7 +125,8 @@ public class Nuevafactura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanenuevafactura = new javax.swing.JPanel();
         Lanuevafactura = new javax.swing.JLabel();
         jLatipodepago = new javax.swing.JLabel();
         jCombtipodepago = new javax.swing.JComboBox<>();
@@ -78,90 +134,122 @@ public class Nuevafactura extends javax.swing.JFrame {
         jTexidenproveedor = new javax.swing.JTextField();
         jLaidenusuario = new javax.swing.JLabel();
         jTexidenusuario = new javax.swing.JTextField();
-        jLadescuento = new javax.swing.JLabel();
-        jTexdescuento = new javax.swing.JTextField();
-        jButoGuardar = new javax.swing.JButton();
+        butguardarnuefactu = new javax.swing.JButton();
+        jButcancelarnuefactu = new javax.swing.JButton();
+        numerodecomprovante = new javax.swing.JLabel();
+        jTexnumerodecomprovante = new javax.swing.JTextField();
+        jButidentificacionproveedor = new javax.swing.JButton();
+        jButidentificacionusuario = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanenuevafactura.setBackground(new java.awt.Color(153, 51, 0));
 
         Lanuevafactura.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Lanuevafactura.setText("Nueva Factura");
 
         jLatipodepago.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLatipodepago.setForeground(new java.awt.Color(51, 0, 255));
         jLatipodepago.setText("Tipo De Pago");
 
+        jCombtipodepago.setBackground(new java.awt.Color(0, 255, 51));
         jCombtipodepago.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jCombtipodepago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Tarjeta de Credito", "Efectivo", " ", " " }));
 
         jLaIidenproveedor.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLaIidenproveedor.setForeground(new java.awt.Color(51, 0, 204));
         jLaIidenproveedor.setText("Identificacion Proveedor");
 
         jLaidenusuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLaidenusuario.setForeground(new java.awt.Color(102, 0, 255));
         jLaidenusuario.setText("Identificacion Usuario");
 
-        jLadescuento.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLadescuento.setForeground(new java.awt.Color(102, 0, 255));
-        jLadescuento.setText("Descuento");
+        butguardarnuefactu.setBackground(new java.awt.Color(0, 255, 51));
+        butguardarnuefactu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        butguardarnuefactu.setText("Guardar");
 
-        jButoGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButoGuardar.setText("Guardar");
+        jButcancelarnuefactu.setBackground(new java.awt.Color(204, 204, 0));
+        jButcancelarnuefactu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButcancelarnuefactu.setText("Cancelar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(Lanuevafactura, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLatipodepago, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                        .addComponent(jCombtipodepago, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLaIidenproveedor)
-                            .addComponent(jLaidenusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLadescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTexidenproveedor)
-                            .addComponent(jTexidenusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                            .addComponent(jTexdescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButoGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(58, 58, 58))
+        numerodecomprovante.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        numerodecomprovante.setText("Numero de comprovante");
+
+        jTexnumerodecomprovante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTexnumerodecomprovanteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanenuevafacturaLayout = new javax.swing.GroupLayout(jPanenuevafactura);
+        jPanenuevafactura.setLayout(jPanenuevafacturaLayout);
+        jPanenuevafacturaLayout.setHorizontalGroup(
+            jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevafacturaLayout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(Lanuevafactura, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanenuevafacturaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanenuevafacturaLayout.createSequentialGroup()
+                        .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanenuevafacturaLayout.createSequentialGroup()
+                                .addComponent(butguardarnuefactu, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButcancelarnuefactu))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanenuevafacturaLayout.createSequentialGroup()
+                                .addComponent(jLatipodepago, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 342, Short.MAX_VALUE)
+                                .addComponent(jCombtipodepago, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(91, 91, 91))
+                    .addGroup(jPanenuevafacturaLayout.createSequentialGroup()
+                        .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanenuevafacturaLayout.createSequentialGroup()
+                                .addComponent(numerodecomprovante, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTexnumerodecomprovante))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanenuevafacturaLayout.createSequentialGroup()
+                                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLaIidenproveedor)
+                                    .addComponent(jLaidenusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTexidenproveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                    .addComponent(jTexidenusuario))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButidentificacionproveedor)
+                            .addComponent(jButidentificacionusuario))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanenuevafacturaLayout.setVerticalGroup(
+            jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevafacturaLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(Lanuevafactura)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLatipodepago)
                     .addComponent(jCombtipodepago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLaIidenproveedor)
-                    .addComponent(jTexidenproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTexidenproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButidentificacionproveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLaidenusuario)
-                    .addComponent(jTexidenusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLadescuento)
-                    .addComponent(jTexdescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(jButoGuardar)
-                .addContainerGap(86, Short.MAX_VALUE))
+                    .addComponent(jTexidenusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButidentificacionusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numerodecomprovante)
+                    .addComponent(jTexnumerodecomprovante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanenuevafacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butguardarnuefactu)
+                    .addComponent(jButcancelarnuefactu))
+                .addGap(141, 141, 141))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,19 +258,23 @@ public class Nuevafactura extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanenuevafactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jPanenuevafactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTexnumerodecomprovanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTexnumerodecomprovanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTexnumerodecomprovanteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,15 +282,19 @@ public class Nuevafactura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Lanuevafactura;
-    private javax.swing.JButton jButoGuardar;
+    private javax.swing.JButton butguardarnuefactu;
+    private javax.swing.JButton jButcancelarnuefactu;
+    private javax.swing.JButton jButidentificacionproveedor;
+    private javax.swing.JButton jButidentificacionusuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jCombtipodepago;
     private javax.swing.JLabel jLaIidenproveedor;
-    private javax.swing.JLabel jLadescuento;
     private javax.swing.JLabel jLaidenusuario;
     private javax.swing.JLabel jLatipodepago;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTexdescuento;
+    private javax.swing.JPanel jPanenuevafactura;
     private javax.swing.JTextField jTexidenproveedor;
     private javax.swing.JTextField jTexidenusuario;
+    private javax.swing.JTextField jTexnumerodecomprovante;
+    private javax.swing.JLabel numerodecomprovante;
     // End of variables declaration//GEN-END:variables
 }

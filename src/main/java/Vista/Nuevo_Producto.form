@@ -29,7 +29,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
+              <Component id="jPanenuevoproducto" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -37,14 +37,19 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanenuevoproducto" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanenuevoproducto">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="66" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -61,24 +66,20 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="Descripcion" pref="75" max="32767" attributes="0"/>
                               <Component id="Imagen" max="32767" attributes="0"/>
-                              <Component id="Nombre" max="32767" attributes="0"/>
+                              <Component id="labNombre" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtimagen" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnbuscarimagen" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtbuscarimagenproducto" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnbuscarimagen" min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelnuevoproducto" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Component id="txtnombre" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabelnuevoproducto" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="txtnombre" alignment="0" min="-2" pref="244" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -92,14 +93,16 @@
                   <Component id="jLabelnuevoproducto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtnombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Imagen" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtimagen" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnbuscarimagen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Imagen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtbuscarimagenproducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="btnbuscarimagen" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -129,7 +132,7 @@
             <Property name="text" type="java.lang.String" value="Nuevo Producto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Nombre">
+        <Component class="javax.swing.JLabel" name="labNombre">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
@@ -147,7 +150,7 @@
             <Property name="text" type="java.lang.String" value="Imagen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtimagen">
+        <Component class="javax.swing.JTextField" name="txtbuscarimagenproducto">
         </Component>
         <Component class="javax.swing.JLabel" name="Descripcion">
           <Properties>
@@ -181,7 +184,15 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnbuscarimagen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar imagen"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="3"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/botonbuscar.png"/>
+            </Property>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">

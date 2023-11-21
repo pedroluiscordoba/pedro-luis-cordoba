@@ -7,6 +7,7 @@ package Vista;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -21,6 +22,16 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
     public Nuevo_proveedor() {
         initComponents();
     }
+    
+
+    public JPanel getjPanenuevoproveedor() {
+        return jPanenuevoproveedor;
+    }
+
+    public void setjPanenuevoproveedor(JPanel jPanenuevoproveedor) {
+        this.jPanenuevoproveedor = jPanenuevoproveedor;
+    }
+    
     
 
     public JButton getBotcancelar() {
@@ -124,10 +135,9 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanenuevoproveedor = new javax.swing.JPanel();
         jLabnuevoproveedor = new javax.swing.JLabel();
         Documento = new javax.swing.JLabel();
-        jTexdocumento = new javax.swing.JTextField();
         Nombre = new javax.swing.JLabel();
         jTextnombre = new javax.swing.JTextField();
         Telefono = new javax.swing.JLabel();
@@ -144,8 +154,11 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
         botguardar = new javax.swing.JButton();
         jLabcorreo = new javax.swing.JLabel();
         jTexcorreo = new javax.swing.JTextField();
+        jTexdocumento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanenuevoproveedor.setBackground(new java.awt.Color(153, 0, 153));
 
         jLabnuevoproveedor.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabnuevoproveedor.setText("Nuevo Proveedor");
@@ -162,12 +175,14 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel2.setText("Tipo de Documento");
 
+        jComtipodedocumento.setBackground(new java.awt.Color(204, 204, 0));
         jComtipodedocumento.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jComtipodedocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione su Documento", "Cedula", "Tarjeta de Identidad", "Registro Civil" }));
 
         Sexo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Sexo.setText("Sexo");
 
+        jCombsexo.setBackground(new java.awt.Color(204, 204, 0));
         jCombsexo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jCombsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione su Sexo", "Masculino", "Femenino", "Otro" }));
 
@@ -177,25 +192,29 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel3.setText("Fecha de Nacimiento");
 
+        botcancelar.setBackground(new java.awt.Color(0, 51, 51));
         botcancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botcancelar.setForeground(new java.awt.Color(0, 255, 51));
         botcancelar.setText("Cancelar");
 
+        botguardar.setBackground(new java.awt.Color(0, 51, 51));
         botguardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        botguardar.setForeground(new java.awt.Color(0, 204, 51));
         botguardar.setText("Guardar");
 
         jLabcorreo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabcorreo.setText("Correo");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+        javax.swing.GroupLayout jPanenuevoproveedorLayout = new javax.swing.GroupLayout(jPanenuevoproveedor);
+        jPanenuevoproveedor.setLayout(jPanenuevoproveedorLayout);
+        jPanenuevoproveedorLayout.setHorizontalGroup(
+            jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanenuevoproveedorLayout.createSequentialGroup()
+                        .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Direccion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanenuevoproveedorLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(Sexo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -203,75 +222,78 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
                             .addComponent(Nombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Documento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTexdocumento)
+                        .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextnombre)
                             .addComponent(jTextelefono)
                             .addComponent(jCombsexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComtipodedocumento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextdireccion)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jDateChfehanaci, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jComtipodedocumento, 0, 289, Short.MAX_VALUE)
+                            .addComponent(jTexdocumento)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanenuevoproveedorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jTextdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
+                        .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
                                 .addGap(117, 117, 117)
                                 .addComponent(jLabnuevoproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(botcancelar)
                                 .addGap(97, 97, 97)
                                 .addComponent(botguardar)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTexcorreo)))
+                        .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jDateChfehanaci, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
+                                .addComponent(jLabcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTexcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanenuevoproveedorLayout.setVerticalGroup(
+            jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevoproveedorLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabnuevoproveedor)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Documento)
                     .addComponent(jTexdocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nombre)
                     .addComponent(jTextnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Telefono)
                     .addComponent(jTextelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComtipodedocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Sexo)
                     .addComponent(jCombsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabcorreo)
                     .addComponent(jTexcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Direccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addComponent(jDateChfehanaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanenuevoproveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botcancelar)
                     .addComponent(botguardar))
                 .addContainerGap(68, Short.MAX_VALUE))
@@ -281,12 +303,12 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanenuevoproveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanenuevoproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -313,7 +335,7 @@ public class Nuevo_proveedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabnuevoproveedor;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanenuevoproveedor;
     private javax.swing.JTextField jTexcorreo;
     private javax.swing.JTextField jTexdocumento;
     private javax.swing.JTextField jTextdireccion;

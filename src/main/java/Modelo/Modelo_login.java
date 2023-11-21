@@ -10,9 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Modelo_login {
-    Conexion conect = new Conexion();
-    Connection cn = conect.iniciarConnexion();
-    Iniciar_sesion lg = new Iniciar_sesion();
     
     
     String usu,contra;
@@ -36,7 +33,7 @@ public class Modelo_login {
         this.contra = contra;
         
     }
-    public boolean validar(String usuario, String pass) {
+    public boolean validar(String usuario, String pass) throws SQLException {
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();
 

@@ -31,6 +31,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     public void setJpanelcliente(JPanel jpanelcliente) {
         this.jpanelcliente = jpanelcliente;
     }
+    
 
     public JComboBox<String> getjComtipodocumen() {
         return jComtipodocumen;
@@ -67,11 +68,21 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     }
 
     public JComboBox<String> getCombsexoclien() {
-        return combsexoclien;
+        return jcombsexoclien;
+    }
+    
+
+    public JLabel getSexo() {
+        return Sexo;
     }
 
+    public void setSexo(JLabel Sexo) {
+        this.Sexo = Sexo;
+    }
+    
+
     public void setCombsexoclien(JComboBox<String> combsexoclien) {
-        this.combsexoclien = combsexoclien;
+        this.jcombsexoclien = combsexoclien;
     }
 
     public JTextField getjTexdocumento() {
@@ -83,11 +94,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     }
 
     public JDateChooser getJdatefecha() {
-        return jdatefecha;
+        return jdatefechanacimiento;
     }
 
     public void setJdatefecha(JDateChooser jdatefecha) {
-        this.jdatefecha = jdatefecha;
+        this.jdatefechanacimiento = jdatefecha;
     }
 
     public JTextField getTxtcorreo() {
@@ -147,11 +158,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
         Correo = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
         Sexo = new javax.swing.JLabel();
-        combsexoclien = new javax.swing.JComboBox<>();
+        jcombsexoclien = new javax.swing.JComboBox<>();
         Direccion = new javax.swing.JLabel();
         txtdireccion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jdatefecha = new com.toedter.calendar.JDateChooser();
+        jdatefechanacimiento = new com.toedter.calendar.JDateChooser();
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         jLabtipodocumento = new javax.swing.JLabel();
@@ -160,6 +171,9 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jpanelcliente.setBackground(new java.awt.Color(255, 255, 51));
+
+        Nuevo_Cliente.setBackground(new java.awt.Color(0, 153, 51));
         Nuevo_Cliente.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Nuevo_Cliente.setText("Nuevo CLiente");
 
@@ -191,9 +205,11 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 204));
         jLabel2.setText("Fecha de Ncimiento");
 
+        btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
 
+        btnGuardar.setBackground(new java.awt.Color(255, 51, 51));
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnGuardar.setText("Guardar");
 
@@ -201,6 +217,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
         jLabtipodocumento.setForeground(new java.awt.Color(102, 0, 255));
         jLabtipodocumento.setText("Tipo de Documento");
 
+        jComtipodocumen.setBackground(new java.awt.Color(0, 255, 102));
         jComtipodocumen.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jComtipodocumen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Cedula", "Targeta de Identidad", "Pasaporte" }));
 
@@ -233,9 +250,9 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
                             .addComponent(txtnombre)
                             .addComponent(txttelefono)
                             .addComponent(txtcorreo)
-                            .addComponent(combsexoclien, 0, 251, Short.MAX_VALUE)
+                            .addComponent(jcombsexoclien, 0, 251, Short.MAX_VALUE)
                             .addComponent(txtdireccion)
-                            .addComponent(jdatefecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jdatefechanacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTexdocumento)
                             .addComponent(jComtipodocumen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -271,7 +288,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
                         .addComponent(Sexo)
                         .addGap(27, 27, 27))
                     .addGroup(jpanelclienteLayout.createSequentialGroup()
-                        .addComponent(combsexoclien)
+                        .addComponent(jcombsexoclien)
                         .addGap(18, 18, 18)))
                 .addGroup(jpanelclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Direccion)
@@ -279,7 +296,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jpanelclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jdatefecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jdatefechanacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addGroup(jpanelclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
@@ -292,7 +309,7 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jpanelcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpanelcliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -319,13 +336,13 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel Telefono;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> combsexoclien;
     private javax.swing.JComboBox<String> jComtipodocumen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabtipodocumento;
     private javax.swing.JTextField jTexdocumento;
-    private com.toedter.calendar.JDateChooser jdatefecha;
+    private javax.swing.JComboBox<String> jcombsexoclien;
+    private com.toedter.calendar.JDateChooser jdatefechanacimiento;
     private javax.swing.JPanel jpanelcliente;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtdireccion;
@@ -333,11 +350,4 @@ public class Nuevo_Cliente extends javax.swing.JFrame {
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 
-    public Object getBtnguardarcli() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getcmbsexo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

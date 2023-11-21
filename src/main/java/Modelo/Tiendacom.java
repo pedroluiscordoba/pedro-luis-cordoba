@@ -1,13 +1,17 @@
 
 package Modelo;
 
-
+import controlador.ControladorPrincipal;
 import controlador.Controladorlogin;
+
+
 
 public class Tiendacom {
     public static void main(String[]args){
-        Controladorlogin log = new Controladorlogin();
-        log.iniciarVista();
+        Controladorlogin login = new Controladorlogin();
+        login.iniciarVista();
+//        ControladorPrincipal prin = new ControladorPrincipal();
+//        prin.iniciarPrincipal(0);
     }
     
 }

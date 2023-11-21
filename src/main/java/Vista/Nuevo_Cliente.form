@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jpanelcliente" min="-2" max="-2" attributes="0"/>
+              <Component id="jpanelcliente" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -40,6 +40,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jpanelcliente">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -72,9 +77,9 @@
                               <Component id="txtnombre" alignment="0" max="32767" attributes="0"/>
                               <Component id="txttelefono" max="32767" attributes="0"/>
                               <Component id="txtcorreo" max="32767" attributes="0"/>
-                              <Component id="combsexoclien" pref="251" max="32767" attributes="0"/>
+                              <Component id="jcombsexoclien" pref="251" max="32767" attributes="0"/>
                               <Component id="txtdireccion" max="32767" attributes="0"/>
-                              <Component id="jdatefecha" max="32767" attributes="0"/>
+                              <Component id="jdatefechanacimiento" max="32767" attributes="0"/>
                               <Component id="jTexdocumento" alignment="0" max="32767" attributes="0"/>
                               <Component id="jComtipodocumen" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -121,7 +126,7 @@
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="combsexoclien" max="32767" attributes="0"/>
+                          <Component id="jcombsexoclien" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -132,7 +137,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jdatefecha" min="-2" max="-2" attributes="0"/>
+                      <Component id="jdatefechanacimiento" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -147,6 +152,9 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Nuevo_Cliente">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="99" red="0" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
             </Property>
@@ -214,7 +222,7 @@
             <Property name="text" type="java.lang.String" value="Sexo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="combsexoclien">
+        <Component class="javax.swing.JComboBox" name="jcombsexoclien">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
@@ -248,10 +256,13 @@
             <Property name="text" type="java.lang.String" value="Fecha de Ncimiento"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jdatefecha">
+        <Component class="com.toedter.calendar.JDateChooser" name="jdatefechanacimiento">
         </Component>
         <Component class="javax.swing.JButton" name="btnCancelar">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
             </Property>
@@ -260,6 +271,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
             </Property>
@@ -281,6 +295,9 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jComtipodocumen">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="ff" red="0" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
             </Property>

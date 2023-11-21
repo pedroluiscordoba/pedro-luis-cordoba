@@ -107,7 +107,7 @@ public class ModeloCliente {
     
     
 
-    public Map<String, Integer> llenarCombo(String valor) {
+    public Map<String, Integer> llenarCombo(String valor) throws SQLException{
         //Llamamos a la clase conexión
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();//Instanciamos la conexion
@@ -127,7 +127,7 @@ public class ModeloCliente {
         return llenar_combo;
     }
 
-    public void insertarCliente() {
+    public void insertarCliente() throws SQLException {
         //Llamamos a la clase conexión
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();//Instanciamos la conexion
@@ -166,7 +166,7 @@ public class ModeloCliente {
 
     }
 
-    public void mostrarTablaCliente(JTable tabla, String valor, String nomPesta) {
+    public void mostrarTablaCliente(JTable tabla, String valor, String nomPesta) throws SQLException{
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();
 
@@ -181,8 +181,8 @@ public class ModeloCliente {
         JButton eliminar = new JButton();
         JButton agregar = new JButton();
 
-//        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png")));
-//        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eliminar.png")));
+        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png")));
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eliminar.png")));
 //        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar_archivo.png")));
 
         String[] titulo = {"Tipo de Documento", "Documento", "Nombre", "Dirección", "Celular", "Género", "Correo", "Fecha de Nacimiento"};
@@ -215,7 +215,7 @@ public class ModeloCliente {
                 for (int i = 0; i < total; i++) {
                     dato[i] = rs.getString(i + 1);
                 }
-                Object[] fila = {dato[1], dato[0], dato[2], dato[7], dato[3], dato[5], dato[6], dato[4]};
+                Object[] fila = {dato[7], dato[0], dato[2], dato[5], dato[3], dato[1], dato[4], dato[6]};
                 if (nomPesta.equals("cliente")) {
                     fila = Arrays.copyOf(fila, fila.length + 2);
                     fila[fila.length - 2] = editar;
@@ -252,7 +252,7 @@ public class ModeloCliente {
         conect.cerrarConexion();
     }
 
-    public void buscarCliente(int valor) {
+    public void buscarCliente(int valor) throws SQLException {
         Conexion cone = new Conexion();
         Connection cn = cone.iniciarConnexion();
         String sql = "call cliente_bus(" + valor + ")";
@@ -272,10 +272,10 @@ public class ModeloCliente {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        
+            }
         }
-    }
-
-    public void actualizarCliente() {
+    public void actualizarCliente() throws SQLException {
         Conexion con = new Conexion();
         Connection cn = con.iniciarConnexion();
 
@@ -297,7 +297,7 @@ public class ModeloCliente {
             e.printStackTrace();
         }
     }
-    public void eliminarCliente() {
+    public void eliminarCliente() throws SQLException {
         Conexion con = new Conexion();
         Connection cn = con.iniciarConnexion();
 
@@ -311,6 +311,7 @@ public class ModeloCliente {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        con.cerrarConexion();
     }
 
 }

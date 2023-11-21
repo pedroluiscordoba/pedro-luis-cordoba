@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -17,7 +20,7 @@ public class Controladorusuario implements ActionListener {
     Nuevos_Usuarios usua = new Nuevos_Usuarios();
     Principal princ = new Principal();
     ModeloUsuario modusuario = new ModeloUsuario();
-
+ 
 
     //constructor
     public Controladorusuario() {
@@ -28,13 +31,13 @@ public class Controladorusuario implements ActionListener {
         usua.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
                 ControladorPrincipal princ = new ControladorPrincipal();
-                princ.iniciarPrincipal();
+                princ.iniciarPrincipal(0);
+                usua.setVisible(false);
             }
         });
     }
 
     public void controladorusuario() {
-        princ.setVisible(false);
         usua.setLocationRelativeTo(null);
         usua.setTitle("Nuevos Usuario");
         usua.setVisible(true);
@@ -47,17 +50,20 @@ public class Controladorusuario implements ActionListener {
         }
         //lleno combo box cargo
         usua.getjCombcargo().addItem("Seleccione...");
-        Map<String, Integer> jCombcargo =  modusuario.llenarCombo("Cargo");
+        Map<String, Integer> jCombcargo = modusuario.llenarCombo("cargo");
         for (String cargo : jCombcargo.keySet()) {
             usua.getjCombcargo().addItem(cargo);
         }
     }
-
+    
+    
+    
+//    metodo adstracto
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(usua.getBotnmostrarclave())) {
 
-            if (usua.getjPassclave().getEchoChar()== '\u2022') {
+            if (usua.getjPassclave().getEchoChar() == '\u2022') {
                 usua.getjPassclave().setEchoChar((char) 0);
                 usua.getBotnmostrarclave().setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ojo-cruzado.png")));
             } else {
@@ -72,8 +78,12 @@ public class Controladorusuario implements ActionListener {
                     || (usua.getjPassclave().getPassword() == null) || (usua.getjDateChfechanaci().getDate() == null) || (usua.getjCombcargo().getSelectedItem().equals("Seleccione..."))
                     || (usua.getCombSexo().getSelectedItem().equals("Seleccione..."))) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar información en todos los campos");
-            }else {
-                //Convertimos el dato de los combox al que entiende sql
+            } else {
+                ControladorPrincipal controprin = new ControladorPrincipal();
+                if (!controprin.modificadorAccesoCorreo(usua.getTxtCorreo().getText())) {
+                    JOptionPane.showMessageDialog(null, "Correo Invalido");
+                
+//Convertimos el dato de los combox al que entiende sql
                 String valorSexo = usua.getCombSexo().getSelectedItem().toString();
                 int sexo = modusuario.llenarCombo("sexo").get(valorSexo);
                 String valorRol = usua.getjCombcargo().getSelectedItem().toString();
@@ -90,7 +100,7 @@ public class Controladorusuario implements ActionListener {
 
                 modusuario.setDocum(Integer.parseInt(usua.getTxtdocumento().getText()));
                 modusuario.setTip_docum(usua.getJcomtipodocu().getSelectedItem().toString());
-                modusuario.setNomb(usua.getTxtNombre() .getText());
+                modusuario.setNomb(usua.getTxtNombre().getText());
                 modusuario.setDirecc(usua.getTxtDireccion().getText());
                 modusuario.setCorre(usua.getTxtCorreo().getText());
                 modusuario.setTelef(usua.getTxtTelefono().getText());
@@ -99,36 +109,50 @@ public class Controladorusuario implements ActionListener {
                 modusuario.setClave(contrasena);
                 modusuario.setSex(sexo);
                 modusuario.setCargo(Cargo);
+               
+                if (controprin.ingresecorreo(usua.getTxtCorreo().getText())) {
+                    if (usua.getJbotguardar().getText().equals("Guardar")) {
+                        modusuario.llenarnuevousuario();
+                        modusuario.Limpiar(usua.getJpNuevoUsuario().getComponents());
+                    } else {
 
-                if (usua.getJbotguardar().getText().equals("Guardar")) {
-                    modusuario.llenarnuevousuario();
-                    //modusuario.limpiar(usua.getJpNuevoUsuario().getComponents());
-                         } else {
-                    modusuario.actualizarUsuario();
-                    usua.setVisible(false);
-                    princ.setVisible(true);
-//                  modusuario.mostrarTablaUsuario(princ.getjTableUsuario(), "", "Usuario");
-//                    prin.getTpPrincipal().setSelectedIndex(0);
+                        try {
+                            modusuario.actualizarUsuario();
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Controladorusuario.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        usua.setVisible(false);
+                        princ.setVisible(true);
+                        usua.dispose();
+                        modusuario.mostrarTablaUsuario(princ.getJttablanuevousuario(), "", "Usuario");
+              
+                    }
                 }
-
+                }else{
+                      JOptionPane.showInputDialog(null, "Error"); 
             }
         }
 
     }
+        
+     if(e.getSource().equals(usua.getJbotocancelar())){
+         usua.dispose();
+     }   
+}
 //Actualizar Usuario
 
-    void actualizarUsuario(int doc) {
+   public void actualizarUsuario(int doc) throws SQLException {
         modusuario.buscarUsuario(doc);
         usua.getTxtdocumento().setEnabled(false);
-        usua.getTxtlogin() .setEnabled(false);
+        usua.getTxtlogin().setEnabled(false);
         usua.getJcomtipodocu().setEnabled(false);
         usua.getTxtdocumento().setText(String.valueOf(doc));
         usua.getTxtNombre().setText(modusuario.getNomb());
-        usua.getTxtTelefono().setText(modusuario. getTelef());
+        usua.getTxtTelefono().setText(modusuario.getTelef());
         usua.getTxtCorreo().setText(modusuario.getCorre());
         usua.getTxtDireccion().setText(modusuario.getDirecc());
-        usua.getTxtlogin() .setText(modusuario.getLogi());
-//        usua.setClave.setText(modusuario.getContra());
+        usua.getTxtlogin().setText(modusuario.getLogi());
+        usua.getjPassclave().setText(modusuario.getClave());
         usua.getjDateChfechanaci().setDate(modusuario.getFech());
 
         //llenar Sexo
@@ -141,17 +165,16 @@ public class Controladorusuario implements ActionListener {
         usua.getCombSexo().setSelectedItem(valoSexo);
 
         //llenar Rol
-        Map<String, Integer> info2 = modusuario.llenarCombo("rol");
-        for (String rol : info2.keySet()) {
-            usua.getjCombcargo().addItem(rol);
+        Map<String, Integer> info2 = modusuario.llenarCombo("cargo");
+        for (String cargo : info2.keySet()) {
+            usua.getjCombcargo().addItem(cargo);
         }
 
         //obtener el valor de la base de datos
-        String valoRol = modusuario.obtenerSeleccion(info2, modusuario.getCargo());
-        usua.getjCombcargo().setSelectedItem(valoRol);
+        String valocargo = modusuario.obtenerSeleccion(info2, modusuario.getCargo());
+        usua.getjCombcargo().setSelectedItem(valocargo);
 
         //Cambiar Titulo
-        
         princ.setVisible(false);
         usua.setLocationRelativeTo(null);
         usua.getJbotguardar().setText("Actualizar");
@@ -160,15 +183,13 @@ public class Controladorusuario implements ActionListener {
     }
     //Eliminar Usuario
 
-    void eliminarUsuario(int doc) {
+    void eliminarUsuario(int doc) throws SQLException {
         int resp = JOptionPane.showConfirmDialog(null, "¿Desea eliminar al usuario? \n" + doc,
-                 "Eliminar Usuario", JOptionPane.YES_OPTION);
+                "Eliminar Usuario", JOptionPane.YES_OPTION);
         if (resp == JOptionPane.YES_OPTION) {
             modusuario.setDocum(doc);
             modusuario.eliminarUsuario();
         }
-     }
+    }
 
 }
-    
-

@@ -5,6 +5,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -20,6 +21,41 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     public Nuevo_Producto() {
         initComponents();
     }
+
+    public JTextField getTxtbuscarimagenproducto() {
+        return txtbuscarimagenproducto;
+    }
+
+    public void setTxtbuscarimagenproducto(JTextField txtbuscarimagenproducto) {
+        this.txtbuscarimagenproducto = txtbuscarimagenproducto;
+    }
+    
+    
+
+    public JPanel getjPanenuevoproducto() {
+        return jPanenuevoproducto;
+    }
+
+    public void setjPanenuevoproducto(JPanel jPanenuevoproducto) {
+        this.jPanenuevoproducto = jPanenuevoproducto;
+    }
+
+    public JTextArea getTxtdescriprocdu() {
+        return txtdescriprocdu;
+    }
+
+    public void setTxtdescriprocdu(JTextArea txtdescriprocdu) {
+        this.txtdescriprocdu = txtdescriprocdu;
+    }
+
+    public JTextField getTxtimagenproducto() {
+        return txtbuscarimagenproducto;
+    }
+
+    public void setTxtimagenproducto(JTextField txtimagenproducto) {
+        this.txtbuscarimagenproducto = txtimagenproducto;
+    }
+    
 
     public JButton getCancelar() {
         return jbtncancelar;
@@ -44,6 +80,7 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     public void setGuardar(JButton Guardar) {
         this.jbtnGuardar = Guardar;
     }
+    
 
     public JButton getButbuscarimagen() {
         return btnbuscarimagen;
@@ -64,11 +101,11 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     }
 
     public JTextField getTxtimagen() {
-        return txtimagen;
+        return txtbuscarimagenproducto;
     }
 
     public void setTxtimagen(JTextField txtimagen) {
-        this.txtimagen = txtimagen;
+        this.txtbuscarimagenproducto = txtimagen;
     }
 
     public JTextField getTxtnombre() {
@@ -87,6 +124,7 @@ public class Nuevo_Producto extends javax.swing.JFrame {
         this.btnbuscarimagen = btnbuscarimagen;
     }
     
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,12 +136,12 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     private void initComponents() {
 
         tiendacom1 = new Modelo.Tiendacom();
-        jPanel1 = new javax.swing.JPanel();
+        jPanenuevoproducto = new javax.swing.JPanel();
         jLabelnuevoproducto = new javax.swing.JLabel();
-        Nombre = new javax.swing.JLabel();
+        labNombre = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         Imagen = new javax.swing.JLabel();
-        txtimagen = new javax.swing.JTextField();
+        txtbuscarimagenproducto = new javax.swing.JTextField();
         Descripcion = new javax.swing.JLabel();
         jbtncancelar = new javax.swing.JButton();
         jbtnGuardar = new javax.swing.JButton();
@@ -113,11 +151,13 @@ public class Nuevo_Producto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanenuevoproducto.setBackground(new java.awt.Color(255, 102, 0));
+
         jLabelnuevoproducto.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabelnuevoproducto.setText("Nuevo Producto");
 
-        Nombre.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        Nombre.setText("Nombre");
+        labNombre.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        labNombre.setText("Nombre");
 
         Imagen.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Imagen.setText("Imagen");
@@ -133,63 +173,64 @@ public class Nuevo_Producto extends javax.swing.JFrame {
         jbtnGuardar.setForeground(new java.awt.Color(0, 0, 204));
         jbtnGuardar.setText("Guardar");
 
-        btnbuscarimagen.setText("Buscar imagen");
+        btnbuscarimagen.setBackground(new java.awt.Color(204, 255, 255));
+        btnbuscarimagen.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnbuscarimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/botonbuscar.png"))); // NOI18N
 
         txtdescriprocdu.setColumns(20);
         txtdescriprocdu.setRows(5);
         jScrollPane1.setViewportView(txtdescriprocdu);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanenuevoproductoLayout = new javax.swing.GroupLayout(jPanenuevoproducto);
+        jPanenuevoproducto.setLayout(jPanenuevoproductoLayout);
+        jPanenuevoproductoLayout.setHorizontalGroup(
+            jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
+                .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
                         .addComponent(jbtncancelar)
                         .addGap(201, 201, 201)
                         .addComponent(jbtnGuardar)
                         .addGap(11, 11, 11))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
+                        .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Descripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                             .addComponent(Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(labNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnbuscarimagen))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelnuevoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
+                                .addComponent(txtbuscarimagenproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnbuscarimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelnuevoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 50, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanenuevoproductoLayout.setVerticalGroup(
+            jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabelnuevoproducto)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Nombre)
+                .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labNombre)
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Imagen)
-                    .addComponent(txtimagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnbuscarimagen))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Imagen)
+                        .addComponent(txtbuscarimagenproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnbuscarimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanenuevoproductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(Descripcion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                         .addComponent(jbtncancelar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanenuevoproductoLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -203,13 +244,13 @@ public class Nuevo_Producto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanenuevoproducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanenuevoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -224,16 +265,16 @@ public class Nuevo_Producto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Descripcion;
     private javax.swing.JLabel Imagen;
-    private javax.swing.JLabel Nombre;
     private javax.swing.JButton btnbuscarimagen;
     private javax.swing.JLabel jLabelnuevoproducto;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanenuevoproducto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtnGuardar;
     private javax.swing.JButton jbtncancelar;
+    private javax.swing.JLabel labNombre;
     private Modelo.Tiendacom tiendacom1;
+    private javax.swing.JTextField txtbuscarimagenproducto;
     private javax.swing.JTextArea txtdescriprocdu;
-    private javax.swing.JTextField txtimagen;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,8 +26,9 @@ import javax.swing.table.TableColumn;
 public class ModeloUsuario {
 
     private int docum, sex, cargo;
-    private String nomb,Tip_docum, direcc, telef, corre, logi, clave;
+    private String nomb, Tip_docum, direcc, telef, corre, logi, clave;
     private Date fech;
+    
 
     public int getDocum() {
         return docum;
@@ -117,7 +118,6 @@ public class ModeloUsuario {
         this.fech = fech;
     }
 
-    
     //llenar los combos
     public Map<String, Integer> llenarCombo(String valor) {
         Conexion conect = new Conexion();
@@ -137,6 +137,7 @@ public class ModeloUsuario {
         }
         return llenar_combo;
     }
+    
 
     public void llenarnuevousuario() {
         Conexion cone = new Conexion();
@@ -169,7 +170,7 @@ public class ModeloUsuario {
         for (Object control : panel) {
             if (control instanceof JTextField jTextField) {
                 jTextField.setText("");
-            
+
                 if (control instanceof JComboBox jComboBox) {
                     jComboBox.setSelectedItem("seleccione...");
                 }
@@ -182,7 +183,7 @@ public class ModeloUsuario {
     }
 //creacion de la tabla usuario en la ventana principal
 
-   public void mostrarTablaUsuario(JTable tabla, String valor, String Nompesta) {
+    public void mostrarTablaUsuario(JTable tabla, String valor, String Nompesta) {
 
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();
@@ -190,7 +191,7 @@ public class ModeloUsuario {
         //Personalizar Emcabezado
         JTableHeader encabeza = tabla.getTableHeader();
         // encabeza.setDefaultRenderer(new Gestion_Encabezado());
-      tabla.setTableHeader(encabeza);
+        tabla.setTableHeader(encabeza);
 
         //Personalizar Celdas
         // tabla.setDefaultRenderer(Object.class, new GestionCeldas());
@@ -198,62 +199,71 @@ public class ModeloUsuario {
         JButton eliminar = new JButton("Eliminar");
         JButton agregar = new JButton("Agregar");
 
-        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png")));
-        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eliminar.png")));
-        String[] titulo = {"Documento", "Tipo de Documento", "Nombre", "Cargo", "Telefono", "Correo", "Género", "Dirección", "Fecha de Nacimiento", "", ""};
+//        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png")));
+//        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eliminar.png")));
+        String[] titulo = {"Documento", "Tipo de Documento", "Nombre", "Cargo", "Telefono", "Correo", "Género", "Dirección", "Fecha de Nacimiento"};
         int total = titulo.length;
-        if (nomb.equals("usuario")) {
+        if (Nompesta.equals("usuario")) {
             titulo = Arrays.copyOf(titulo, titulo.length + 2);
             titulo[titulo.length - 2] = "";
             titulo[titulo.length - 1] = "";
         } else {
             titulo = Arrays.copyOf(titulo, titulo.length + 1);
-           titulo[titulo.length - 1] = "";
-
-            DefaultTableModel tablaUsuario = new DefaultTableModel(null, titulo) {
-                public boolean isCellEditable(int row, int column) {
-
-                    return false;
-
-                }
-            };
-
-            String sqlusuario;
-            if (valor.equals("")) {
-                sqlusuario = "SELECT * FROM mostrarusuario";
-            } else {
-                sqlusuario = "call consultar_usuario('" + valor + "')";
-            }
-           try {
-                String[] dato = new String[titulo.length];
-                Statement st = cn.createStatement(); //Crea una consulta
-                ResultSet rs = st.executeQuery(sqlusuario);
-               while (rs.next()) {
-                    for (int i = 0; i < titulo.length - 2; i++) {
-                       dato[i] = rs.getString(i + 1);
-                   }
-                   Object[] fila = {dato[0], dato[1], dato[2], dato[3], dato[4], dato[5], dato[6], dato[7], dato[8]};
-
-                   tablaUsuario.addRow(new Object[]{dato[0], dato[1], dato[2], dato[3], dato[4], dato[5], dato[6], dato[7], dato[8], editar, eliminar});
-               }
-               cn.close();
-
-           } catch (SQLException e) {
-               e.printStackTrace();
-            }
-           tabla.setModel(tablaUsuario);
-            //Darle Tamaño a cada Columna
-           int cantColum = tabla.getColumnCount();
-            int[] ancho = {100, 180, 100, 150, 100, 160, 100, 180, 150, 30};
-            for (int i = 0; i < cantColum; i++) {
-               TableColumn columna = tabla.getColumnModel().getColumn(i);
-                columna.setPreferredWidth(ancho[i]);
-            }
-            conect.cerrarConexion();
+            titulo[titulo.length - 1] = "";
         }
-   }
+        DefaultTableModel tablaUsuario = new DefaultTableModel(null, titulo) {
+            public boolean isCellEditable(int row, int column) {
 
-    public void buscarUsuario(int valor) {
+                return false;
+
+            }
+        };
+
+        String sqlusuario;
+        if (valor.equals("")) {
+            sqlusuario = "SELECT * FROM mostrar_usuario";
+        } else {
+            sqlusuario = "call consultar_usuario('" + valor + "')";
+        }
+        try {
+            String[] dato = new String[titulo.length];
+            Statement st = cn.createStatement(); //Crea una consulta
+            ResultSet rs = st.executeQuery(sqlusuario);
+            while (rs.next()) {
+                for (int i = 0; i < titulo.length - 2; i++) {
+                    dato[i] = rs.getString(i + 1);
+                }
+                Object[] fila = {dato[0], dato[1], dato[2], dato[3], dato[4], dato[5], dato[6], dato[7],dato[8],dato[9]};
+                //Establecemos una condicion donde si el nombre de la pestaña que se recibe es "usuario", se ejecute la condicion verdadera, añadiendo el boton editar y eliminar en el proceso, de lo contrario, se añadira el boton de agregar en caso de que no sea verdadera
+                if (Nompesta.equals("usuario")) {
+                    fila = Arrays.copyOf(fila, fila.length + 2);
+                    fila[fila.length - 2] = editar;
+                    fila[fila.length - 1] = eliminar;
+                } else {
+                    fila = Arrays.copyOf(fila, fila.length + 1);
+                    fila[fila.length - 1] = agregar;
+                }
+                tablaUsuario.addRow(fila);
+
+            }
+            cn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        tabla.setModel(tablaUsuario);
+        //Darle Tamaño a cada Columna
+        int cantColum = tabla.getColumnCount();
+        int[] ancho = {100, 180, 100, 150, 100, 160, 100, 180, 150, 30,30};
+        for (int i = 0; i < cantColum; i++) {
+            TableColumn columna = tabla.getColumnModel().getColumn(i);
+            columna.setPreferredWidth(ancho[i]);
+        }
+        conect.cerrarConexion();
+    }
+
+
+public void buscarUsuario(int valor) throws SQLException {
         Conexion cone = new Conexion();
         Connection cn = cone.iniciarConnexion();
         String sql = "call buscar_usuario(" + valor + ")";
@@ -289,7 +299,7 @@ public class ModeloUsuario {
         return null;
     }
 
-    public void actualizarUsuario() {
+    public void actualizarUsuario() throws SQLException {
         Conexion cone = new Conexion();
         Connection cn = cone.iniciarConnexion();
 
@@ -313,7 +323,7 @@ public class ModeloUsuario {
         }
     }
 
-    public void eliminarUsuario() {
+    public void eliminarUsuario() throws SQLException {
         Conexion cone = new Conexion();
         Connection cn = cone.iniciarConnexion();
 

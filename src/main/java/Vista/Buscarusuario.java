@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Peter Louis
@@ -17,6 +22,37 @@ public class Buscarusuario extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTable getjTablebuscarusuario() {
+        return jTablebuscarusuario;
+    }
+
+    public void setjTablebuscarusuario(JTable jTablebuscarusuario) {
+        this.jTablebuscarusuario = jTablebuscarusuario;
+    }
+
+    
+
+    
+
+    public JTextField getjTextbuscarusuario() {
+        return jTextbuscarusuario;
+    }
+
+    public void setjTextbuscarusuario(JTextField jTextbuscarusuario) {
+        this.jTextbuscarusuario = jTextbuscarusuario;
+    }
+   
+    public JPanel getjPanebuscarusuario() {
+        return jPanebuscarusuario;
+    }
+
+    public void setjPanebuscarusuario(JPanel jPanebuscarusuario) {
+        this.jPanebuscarusuario = jPanebuscarusuario;
+    }
+
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,99 +62,97 @@ public class Buscarusuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanebuscarusuario = new javax.swing.JPanel();
         jLabebuscarusuario = new javax.swing.JLabel();
-        Butbuscar = new javax.swing.JButton();
+        jTextbuscarusuario = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablebuscarusuario = new javax.swing.JTable();
+        jLabeb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setForeground(new java.awt.Color(0, 0, 204));
+        jPanebuscarusuario.setBackground(new java.awt.Color(255, 0, 204));
+        jPanebuscarusuario.setForeground(new java.awt.Color(0, 0, 204));
 
         jLabebuscarusuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabebuscarusuario.setText("Buscar Usuario");
 
-        Butbuscar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        Butbuscar.setForeground(new java.awt.Color(51, 0, 255));
-        Butbuscar.setText("Buscar");
+        jTablebuscarusuario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            }
+        ));
+        jScrollPane1.setViewportView(jTablebuscarusuario);
+
+        jLabeb.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabeb.setText("Buscar Usuario");
+
+        javax.swing.GroupLayout jPanebuscarusuarioLayout = new javax.swing.GroupLayout(jPanebuscarusuario);
+        jPanebuscarusuario.setLayout(jPanebuscarusuarioLayout);
+        jPanebuscarusuarioLayout.setHorizontalGroup(
+            jPanebuscarusuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanebuscarusuarioLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabeb, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(jTextbuscarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+            .addGroup(jPanebuscarusuarioLayout.createSequentialGroup()
                 .addGap(156, 156, 156)
                 .addComponent(jLabebuscarusuario)
-                .addContainerGap(147, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Butbuscar)
-                .addGap(49, 49, 49))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanebuscarusuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanebuscarusuarioLayout.setVerticalGroup(
+            jPanebuscarusuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanebuscarusuarioLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabebuscarusuario)
-                .addGap(31, 31, 31)
-                .addComponent(Butbuscar)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanebuscarusuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextbuscarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanebuscarusuarioLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabeb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanebuscarusuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanebuscarusuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Buscarusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Buscarusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Buscarusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Buscarusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Buscarusuario().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Butbuscar;
+    private javax.swing.JLabel jLabeb;
     private javax.swing.JLabel jLabebuscarusuario;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanebuscarusuario;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablebuscarusuario;
+    private javax.swing.JTextField jTextbuscarusuario;
     // End of variables declaration//GEN-END:variables
 }

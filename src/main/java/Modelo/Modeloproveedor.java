@@ -27,7 +27,7 @@ import javax.swing.table.TableColumn;
 
 public class Modeloproveedor {
      private int docume, sexo;
-    private String nomb, tipo_docume, telefo,cn, correo, direc, tipo_perso;
+    private String nomb, tipo_docume, telefo, correo, direc, tipo_perso;
     private Date fecha;
 
     public int getDocume() {
@@ -101,7 +101,7 @@ public class Modeloproveedor {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-    public Map<String, Integer> llenarCombo(String valor) {
+    public Map<String, Integer> llenarCombo(String valor) throws SQLException {
         Conexion conect = new Conexion();
         Connection cn = conect.iniciarConnexion();
         
@@ -119,7 +119,7 @@ public class Modeloproveedor {
         }
         return llenar_combo;
     }
-     public void insertarProveedor() {
+     public void insertarProveedor() throws SQLException {
         Conexion conect = new Conexion();
         Connection con = conect.iniciarConnexion();
         String sql = "Call inst_proveedor(?,?,?,?,?,?,?,?,?)";
@@ -160,7 +160,7 @@ public class Modeloproveedor {
         }
         
     }
-public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
+public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) throws SQLException{
         Conexion conect = new Conexion();
         Connection conct = conect.iniciarConnexion();
          //Personalizar Encabezado
@@ -175,10 +175,10 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
         JButton agregar = new JButton();
 
         editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png")));
-        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eliminar.png")));
-        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar_archivo.png")));
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/basura.png")));
+        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar-archivo.png")));
 
-        String[] titulo = {"Tipo de Documento", "Documento", "Nombre", "Tipo Persona", "Dirección", "Celular", "Género", "Correo", "Fecha de Nacimiento"};
+        String[] titulo = {"Tipo de Documento", "Documento", "Nombre",  "Dirección", "Celular", "sexo", "Correo", "Fecha de Nacimiento"};
         int total = titulo.length;
 
         if (nomPesta.equals("proveedor")) {
@@ -208,7 +208,7 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
                 for (int i = 0; i < total; i++) {
                     dato[i] = rs.getString(i + 1);
                 }
-                Object[] fila = {dato[0], dato[1], dato[2], dato[3], dato[4], dato[5], dato[6], dato[7], dato[8]};
+                Object[] fila = {dato[0], dato[1], dato[2], dato[3], dato[4], dato[5], dato[6], dato[7]};
                 if (nomPesta.equals("proveedor")) {
                     fila = Arrays.copyOf(fila, fila.length + 2);
                     fila[fila.length - 2] = editar;
@@ -227,7 +227,7 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
         tabla.setModel(tablaProveedor);
         //Darle tamaño a cada columna
         int numColumnas = tabla.getColumnCount();
-        int[] tamanos = {150, 100, 150, 130, 150, 100, 100, 200, 150};
+        int[] tamanos = {150, 100, 150, 130, 150, 100, 100, 200, 150, 90, 90};
 
         if (nomPesta.equals("proveedor")) {
             tamanos = Arrays.copyOf(tamanos, tamanos.length + 2);
@@ -244,7 +244,7 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
         conect.cerrarConexion();
     }
 
-    public void buscarProveedor(int valor) {
+    public void buscarProveedor(int valor) throws SQLException {
         Conexion cone = new Conexion();
         Connection cn = cone.iniciarConnexion();
         String sql = "call proveedor_bus(" + valor + ")";
@@ -277,7 +277,7 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
         return null;
     }
 
-    public void actualizarProveedor() {
+    public void actualizarProveedor() throws SQLException {
         Conexion con = new Conexion();
         Connection cn = con.iniciarConnexion();
 
@@ -300,7 +300,7 @@ public void mostrarTablaProveedor(JTable tabla, String valor, String nomPesta) {
         }
     }
 
-    public void eliminarProveedor() {
+    public void eliminarProveedor() throws SQLException {
         Conexion con = new Conexion();
         Connection cn = con.iniciarConnexion();
 
